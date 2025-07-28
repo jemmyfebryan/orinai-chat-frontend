@@ -86,7 +86,7 @@ export default function Chat() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://216.244.94.213:8080/chat_api', {
+      const response = await fetch('/chat_api', {  // http://216.244.94.213:8080/chat_api
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

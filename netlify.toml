@@ -13,3 +13,9 @@
   from = "/api/*"
   status = 200
   to = "/.netlify/functions/api/:splat"
+
+[[redirects]]
+  from = "/chat_api"
+  to = "http://216.244.94.213:8080/chat_api"
+  status = 200
+  force = true
