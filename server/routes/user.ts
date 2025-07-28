@@ -1,0 +1,40 @@
+import { RequestHandler } from "express";
+
+// Dummy user data for prototype
+// const dummyUsers = [
+//   { id: "user001", devices: ["Toyota Camry 2020", "Honda Civic 2019"] },
+//   { id: "user002", devices: ["BMW X5 2021", "Mercedes C-Class 2022"] },
+//   { id: "user003", devices: ["Ford F-150 2023"] },
+//   { id: "admin", devices: ["Tesla Model S 2024", "Audi A4 2021", "Nissan Altima 2020"] },
+//   { id: "test123", devices: ["Volkswagen Golf 2019"] },
+// ];
+const dummyUsers = [
+  { id: "41651", devices: ["353691846067915", "353691846067907"] },
+  { id: "41641", devices: ["353691846741238", "353691846741212", "353691846741311"] },
+  { id: "41634", devices: ["352503096245417", "352503097599697"] },
+  { id: "41564", devices: ["353691840153869", "353691845897312"] },
+];
+
+export const checkUserIds: RequestHandler = (req, res) => {
+  const query = req.query.q as string || '';
+  const matchingUsers = dummyUsers
+    .filter(user => user.id.toLowerCase().includes(query.toLowerCase()))
+    .map(user => user.id)
+    .slice(0, 5); // Limit to 5 suggestions
+  
+  res.json(matchingUsers);
+};
+
+export const getUserDevices: RequestHandler = (req, res) => {
+  const userId = req.params.id;
+  const user = dummyUsers.find(u => u.id === userId);
+  
+  if (!user) {
+    return res.status(404).json({ error: "User not found" });
+  }
+  
+  res.json({ 
+    user_id: userId, 
+    devices: user.devices 
+  });
+};
