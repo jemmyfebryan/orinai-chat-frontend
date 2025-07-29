@@ -174,10 +174,11 @@ export default function Chat() {
         <div className="p-6 border-b border-gray-200">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+              <img src="/orin_logo.png" alt="ORIN AI" className="w-20 object-contain" />
+              {/* <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-lg">🛰️</span>
               </div>
-              <h1 className="text-xl font-bold text-gray-900">ORIN AI</h1>
+              <h1 className="text-xl font-bold text-gray-900">ORIN AI</h1> */}
             </div>
             <div className="flex items-center space-x-2">
               <Button variant="ghost" size="sm">
@@ -253,7 +254,7 @@ export default function Chat() {
                         <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
                           message.role === 'user' ? 'bg-primary text-white' : 'bg-gray-200'
                         }`}>
-                          {message.role === 'user' ? '👤' : '🛰️'}
+                          {message.role === 'user' ? '👤' : '🤖'}
                         </div>
                         <div className={`rounded-2xl p-4 ${
                           message.role === 'user' 
@@ -302,7 +303,7 @@ export default function Chat() {
                   <div className="flex justify-start">
                     <div className="flex items-start space-x-3">
                       <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                        🛰️
+                        🤖
                       </div>
                       <div className="bg-white border border-gray-200 rounded-2xl p-4 min-w-[200px]">
                         <div className="flex items-center space-x-3">

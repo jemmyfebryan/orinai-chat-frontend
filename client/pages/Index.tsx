@@ -50,14 +50,12 @@ export default function Index() {
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md space-y-8">
         {/* Header */}
-        <div className="text-center space-y-4">
+        <div className="text-center space-y-5">
           <div className="flex items-center justify-center space-x-2">
-            <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-              <span className="text-2xl">🛰️</span>
-            </div>
-            <h1 className="text-4xl font-bold text-gray-900">ORIN AI</h1>
+            <img src="/orin_logo.png" alt="ORIN AI" className="w-40 object-contain" />
+            {/* <h1 className="text-3xl font-bold text-gray-900">AI</h1> */}
           </div>
-          <p className="text-gray-600 text-lg">Your intelligent vehicle assistant</p>
+          <p className="text-gray-600 text-m">Your intelligent vehicle assistant</p>
         </div>
 
         {/* Login Card */}
