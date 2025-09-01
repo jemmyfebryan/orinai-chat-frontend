@@ -19,6 +19,7 @@ interface Message {
 interface UserData {
   user_id: string;
   devices: string[];
+  api_token: string;
 }
 
 export default function Chat() {
@@ -90,9 +91,9 @@ export default function Chat() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'X-Api-Token': userData?.api_token || ''
         },
         body: JSON.stringify({
-          user_id: userId,
           messages: [...messages, userMessage].map(m => ({ role: m.role, content: m.content }))
         })
       });
